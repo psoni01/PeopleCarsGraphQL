@@ -1,3 +1,6 @@
+server/node_modules
+client/node_modules
+
 # Logs
 logs
 *.log
@@ -7,6 +10,8 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+# MAC
+.DS_Store
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
