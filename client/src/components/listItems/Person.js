@@ -1,9 +1,11 @@
 import { useState } from 'react'
 
 import { EditOutlined } from '@ant-design/icons'
-import { Card } from 'antd'
+import { Button, Card } from 'antd'
 import RemovePerson from '../buttons/RemovePerson'
 import UpdatePerson from '../forms/UpdatePerson'
+import Cars from '../lists/Cars'
+import {Link } from 'react-router-dom';
 
 const getStyles = () => ({
   card: {
@@ -31,11 +33,15 @@ const Person = props => {
         <Card
           style={styles.card}
           actions={[
+            
+      <Link to={`/people/${id}`}>LEARN MORE</Link>,
             <EditOutlined key='edit' onClick={handleButtonClick} />,
             <RemovePerson id={id} />
           ]}
         >
           {firstName} {lastName}
+
+          <Cars id={id}/>
         </Card>
       )}
     </>

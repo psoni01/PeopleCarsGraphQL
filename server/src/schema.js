@@ -117,6 +117,7 @@ const people = [
     people: [Person]
     car(id: String!): Car
     cars: [Car]
+    personWithCars(id: String!): [Car]
   }
 
   type Mutation {
@@ -140,6 +141,9 @@ const resolvers = {
       cars: () => cars,
       car: (root, args) => {
         return find(cars, {id:args.id})
+      },
+      personWithCars: (root, args) => {
+        return filter(cars, {personId: args.id})
       }
     },
 
