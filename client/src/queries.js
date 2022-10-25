@@ -21,11 +21,18 @@ export const GET_CARS = gql`
     }
   }
 `
-
+export const GET_PERSON = gql`
+query Query($personId: String!) {
+  person(id: $personId) {
+    id
+    firstName
+    lastName
+  }
+}`
 
 export const GET_PERSON_WITH_CARS = gql`
-query Query($personWithCarsId: String!){
-  personWithCars(id: $personWithCarsId)  {
+query Query($personId: String!) {
+  personWithCars(personId: $personId) {
     id
     year
     make
